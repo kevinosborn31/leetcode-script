@@ -1,8 +1,9 @@
-const table = document.getElementsByClassName("min-w-full")[0];
-const rows = table.getElementsByClassName("odd:bg-overlay-3");
+const table = document.querySelector(".min-w-full");
+const rows = table.querySelectorAll(".odd:bg-overlay-3");
 
-for (let i = rows.length - 1; i >= 0; --i) {
-    if (rows[i].getElementsByClassName("text-brand-orange").length > 0) {
-        rows[i].parentNode.removeChild(rows[i]);
+for (let i = rows.length - 1; i >= 0; i--) {
+    const row = rows[i];
+    if (row.querySelector(".text-brand-orange")) {
+        row.parentNode.removeChild(row);
     }
 }
